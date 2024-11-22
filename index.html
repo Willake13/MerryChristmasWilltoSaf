@@ -13,7 +13,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* 替换背景图片路径为您本地的文件路径 */
+            /* 响应式背景图片 */
             background: url('background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: white;
@@ -22,18 +22,19 @@
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             color: #ff4b5c;
             text-shadow: 0 0 8px rgba(255, 75, 92, 0.8), 0 0 20px rgba(255, 75, 92, 0.6);
             animation: glow 2s infinite alternate;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
+            text-align: center;
         }
 
         h1 img {
             margin-left: 15px;
-            width: 60px;
+            width: 50px;
             height: auto;
         }
 
@@ -47,7 +48,7 @@
         }
 
         .button-container {
-            margin: 40px 0;
+            margin: 20px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -55,8 +56,8 @@
 
         .btn {
             display: inline-block;
-            padding: 15px 30px;
-            font-size: 1.5em;
+            padding: 10px 20px;
+            font-size: 1.2em;
             color: white;
             background-color: #ff4b5c;
             text-decoration: none;
@@ -71,9 +72,10 @@
         }
 
         .footer-text {
-            font-size: 1.2em;
+            font-size: 1em;
             color: white;
-            margin-top: 20px;
+            margin-top: 10px;
+            text-align: center;
         }
 
         .snowflake {
@@ -92,6 +94,20 @@
                 transform: translateY(110vh) rotate(360deg);
             }
         }
+
+        /* 手机端适配 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .btn {
+                padding: 8px 15px;
+                font-size: 1em;
+            }
+            h1 img {
+                width: 40px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -102,12 +118,12 @@
     <div class="button-container">
         <a class="btn" href="https://drive.google.com/file/d/1P8t6ldrbHrC2hxYIcp6JgpmqIhHq90Ix/view?usp=drive_link" target="_blank">Click</a>
     </div>
-    <p class="footer-text">Click and download it then.</p>
+    <p class="footer-text">Click and try to download it for high-quality..</p>
 
     <script>
         // Create snowflake elements
         const body = document.body;
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 50; i++) {
             const snowflake = document.createElement('div');
             snowflake.className = 'snowflake';
             snowflake.textContent = '❄';
