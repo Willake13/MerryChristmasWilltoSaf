@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #1a1a2e;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff4b5c;
+            text-shadow: 0 0 8px rgba(255, 75, 92, 0.8), 0 0 20px rgba(255, 75, 92, 0.6);
+            animation: glow 2s infinite alternate;
+            margin-bottom: 20px;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 8px rgba(255, 75, 92, 0.8), 0 0 20px rgba(255, 75, 92, 0.6);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(255, 75, 92, 1), 0 0 30px rgba(255, 75, 92, 1);
+            }
+        }
+
+        .button-container {
+            margin: 40px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            color: white;
+            background-color: #ff4b5c;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #c32c3c;
+            transform: scale(1.05);
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 1;
+            pointer-events: none;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        .footer-text {
+            font-size: 1.2em;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Merry Christmas</h1>
+    <div class="button-container">
+        <a class="btn" href="https://drive.google.com/file/d/1P8t6ldrbHrC2hxYIcp6JgpmqIhHq90Ix/view?usp=drive_link" target="_blank">Click</a>
+    </div>
+    <p class="footer-text">Remember download it first.</p>
+
+    <script>
+        // Create snowflake elements
+        const body = document.body;
+        for (let i = 0; i < 100; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowflake.style.opacity = Math.random();
+            body.appendChild(snowflake);
+        }
+    </script>
+</body>
+</html>
